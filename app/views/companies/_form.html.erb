@@ -1,0 +1,29 @@
+<%= form_with model: @company do|form| %>
+<div>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+  <% company.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+</div>
+<div>
+  <%= form.label :company_type %><br>
+  <%= form.text_field :company_type %>
+  <% company.errors.full_messages_for(:company_type).each do |message| %>
+      <div><%= message %></div>
+      <% end %>
+</div>
+
+<%= form.fields_for :addresses do |builder| %>
+ <fieldset>
+  <%= builder.label :address, "Address" %><br>
+  <%= builder.text_area :address %>
+  <%= form.hidden_field :_destroy %>
+  <% link_to "remove", "#", class: "remove_fields" %>
+ </fieldset>
+<% end %>
+
+<div>
+  <%= form.submit %>
+</div>
+<% end %>

@@ -1,0 +1,10 @@
+<h1><%= @company.name %></h1>
+
+<p><%= @company.company_type %></p>
+
+
+<h2>Adresses</h2>
+<%= render @company.addresses %>
+
+<h2>Add a Address</h2>
+<%= render 'addresses/form' %>

@@ -1,0 +1,9 @@
+<%= form_with model: [ @company, @company.addresses.build ] do |form| %>
+<div>
+  <%= form.label :address %><br>
+  <%= form.text_area :address %>
+</div>
+<div>
+  <%= form.submit %>
+</div>
+<% end %>
